@@ -1,5 +1,11 @@
 # Data Analyser app by Tawseef Ahmad
-import io
+import subprocess
+import sys
+
+try:
+    import openpyxl
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl"])
 import os
 import pandas as pd
 import numpy as np
@@ -448,3 +454,4 @@ with st.expander("Status / Data Summary"):
         st.write(st.session_state.df.isnull().sum())
     else:
         st.info("No data loaded yet. Use **File & Save → Open**.")
+
