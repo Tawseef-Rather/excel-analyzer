@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 import streamlit as st
-from pandas import openpyxl
+import openpyxl
 
 # ----------------------------
 # Excel-style UI + Watermark
@@ -449,5 +449,6 @@ with st.expander("Status / Data Summary"):
         st.write(st.session_state.df.isnull().sum())
     else:
         st.info("No data loaded yet. Use **File & Save → Open**.")
+
 
 
